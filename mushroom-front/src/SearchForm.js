@@ -1,13 +1,15 @@
-import React from 'react'
-import {Form} from 'semantic-ui-react'
+import React from "react";
+import { Form } from "semantic-ui-react";
 
-const SearchForm = (props) => {
- return(  <Form>
-    <Form.Field>
-      <label>Search products</label>
-      <input placeholder='Products' />
-    </Form.Field>
-  </Form>)
-}
+const SearchForm = props => {
+  return (
+    <Form>
+      <Form.Field>
+        <label>Search products</label>
+        <input onChange={props.searchInput} placeholder="Stuff" />
+      </Form.Field>
+    </Form>
+  );
+};
 
-export default SearchForm
+export default SearchForm;

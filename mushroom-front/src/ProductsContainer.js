@@ -1,14 +1,19 @@
-import React from 'react'
-import { Segment, Card } from 'semantic-ui-react'
+import React from "react";
+import { Segment, Card } from "semantic-ui-react";
+import ProductCard from "./ProductCard";
 
-
-
-const ProductsContainer = (props) => (
+const ProductsContainer = props => (
   <Segment>
     <Card.Group>
-      {/*Render individual products*/}
+      {props.products.map(product => (
+        <ProductCard
+          product={product}
+          addToCart={props.addToCart}
+          key={product.id}
+        />
+      ))}
     </Card.Group>
   </Segment>
-)
+);
 
-export default ProductsContainer
+export default ProductsContainer;
